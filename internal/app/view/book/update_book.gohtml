@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<body>
+    <h1>Операции с экземпляром книги</h1>
+    <form method="post">
+        <input type="text" name="name" placeholder="Имя" value={{.Book.Name}}><br>
+        <input type="text" name="author" placeholder="Автор" value={{.Book.Author}}><br>
+        <input type="text" name="year" placeholder="Год" value={{.Book.Year}}><br><br>
+        <input type="text" name="publisher" placeholder="Издательство" value={{.Book.Publisher}}><br><br>
+        <input type="text" name="count_papers" placeholder="Кол-во страниц" value={{.Book.CountPapers}}><br><br>
+        <input type="text" name="total_balance" placeholder="Количество экземпляров на учете" value={{.Book.TotalBalance}}><br><br>
+        <p>
+        <select size="5" multiple name="customer">
+                {{range .Customers}}
+                    <option value={{.ID}}>{{.Name}}</option>        
+                {{end}}
+        </select>
+        </p>
+        <input type="text" name="date_from" placeholder="Дата выдачи" value={{.DateFrom}}><br><br>
+        <input type="text" name="date_to" placeholder="Дата возврата" value={{.DateTo}}><br><br>
+        <input type="checkbox" name="on_store" value="1" checked={{.OnStore}}>Находится в библиотеке<Br>
+        <input type="submit" value="Сохранить">
+    </form>
+</body>
+</html>

@@ -11,6 +11,7 @@ type Store struct {
 	config             *Config
 	db                 *sql.DB
 	customerRepository *CustomerRepository
+	bookRepository     *BookRepository
 }
 
 // New ..
@@ -52,4 +53,17 @@ func (s *Store) Customer() *CustomerRepository {
 	}
 
 	return s.customerRepository
+}
+
+// Book ...
+func (s *Store) Book() *BookRepository {
+	if s.bookRepository != nil {
+		return s.bookRepository
+	}
+
+	s.bookRepository = &BookRepository{
+		store: s,
+	}
+
+	return s.bookRepository
 }

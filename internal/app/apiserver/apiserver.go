@@ -70,6 +70,16 @@ func (s *APIServer) configureRouter() {
 
 	s.router.HandleFunc("/customers/delete", ch.Delete())
 
+	bh := NewBookHandler(s.store)
+
+	s.router.HandleFunc("/books", bh.Index())
+
+	s.router.HandleFunc("/books/create", bh.Create())
+
+	s.router.HandleFunc("/books/update", bh.Update())
+
+	s.router.HandleFunc("/books/delete", bh.Delete())
+
 }
 
 func (s *APIServer) configureStore() error {
