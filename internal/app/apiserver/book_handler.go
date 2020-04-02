@@ -1,7 +1,6 @@
 package apiserver
 
 import (
-	"fmt"
 	"html/template"
 	"net/http"
 	"os"
@@ -118,8 +117,6 @@ func (h *BookHandler) Update() http.HandlerFunc {
 			dateTo := r.FormValue("date_to")
 			onStore := r.FormValue("on_store")
 
-			fmt.Println(onStore)
-
 			cp, _ := strconv.Atoi(countPapers)
 			tb, _ := strconv.Atoi(totalBalance)
 			onS, _ := strconv.Atoi(onStore)
@@ -138,8 +135,6 @@ func (h *BookHandler) Update() http.HandlerFunc {
 			}
 
 			h.store.Book().Update(book)
-
-			fmt.Println(bID, cID, dateFrom, dateTo, onS)
 
 			h.store.Book().SetCustomer(bID, cID, dateFrom, dateTo, onS)
 

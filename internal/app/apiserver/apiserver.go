@@ -80,6 +80,16 @@ func (s *APIServer) configureRouter() {
 
 	s.router.HandleFunc("/books/delete", bh.Delete())
 
+	s.router.HandleFunc("/reports", s.reports())
+
+	rh := NewReportHandler(s.store)
+
+	s.router.HandleFunc("/reports/rarely", rh.Rarely())
+
+	s.router.HandleFunc("/reports/rate", rh.Rate())
+
+	s.router.HandleFunc("/reports/credit", rh.Credit())
+
 }
 
 func (s *APIServer) configureStore() error {
@@ -99,5 +109,14 @@ func (s *APIServer) index() http.HandlerFunc {
 
 	return func(w http.ResponseWriter, r *http.Request) {
 		tpl.ExecuteTemplate(w, "index.gohtml", 3)
+	}
+}
+
+func (s *APIServer) reports() http.HandlerFunc {
+
+	return func(w http.ResponseWriter, r *http.Request) {
+		wd, _ := os.Getwd()
+		tpl := template.Must(template.ParseFiles(wd + "/internal/app/view/index_reports.gohtml"))
+		tpl.ExecuteTemplate(w, "index_reports.gohtml", 3)
 	}
 }

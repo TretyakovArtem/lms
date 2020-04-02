@@ -12,6 +12,7 @@ type Store struct {
 	db                 *sql.DB
 	customerRepository *CustomerRepository
 	bookRepository     *BookRepository
+	reportRepository   *ReportRepository
 }
 
 // New ..
@@ -66,4 +67,17 @@ func (s *Store) Book() *BookRepository {
 	}
 
 	return s.bookRepository
+}
+
+// Report ...
+func (s *Store) Report() *ReportRepository {
+	if s.reportRepository != nil {
+		return s.reportRepository
+	}
+
+	s.reportRepository = &ReportRepository{
+		store: s,
+	}
+
+	return s.reportRepository
 }

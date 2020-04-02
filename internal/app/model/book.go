@@ -10,4 +10,5 @@ type Book struct {
 	Publisher    string
 	CountPapers  int
 	TotalBalance int
+	Rate         int
 }
