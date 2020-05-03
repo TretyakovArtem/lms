@@ -57,38 +57,10 @@ func (s *APIServer) configureLogger() error {
 
 func (s *APIServer) configureRouter() {
 
-	// эндпойнты для читателей
-	ch := NewCustomerHandler(s.store)
-
-	s.router.HandleFunc("/", s.index())
-
-	s.router.HandleFunc("/customers", ch.Index())
-
-	s.router.HandleFunc("/customers/create", ch.Create())
-
-	s.router.HandleFunc("/customers/update", ch.Update())
-
-	s.router.HandleFunc("/customers/delete", ch.Delete())
-
 	bh := NewBookHandler(s.store)
 
 	s.router.HandleFunc("/books", bh.Index())
 
-	s.router.HandleFunc("/books/create", bh.Create())
-
-	s.router.HandleFunc("/books/update", bh.Update())
-
-	s.router.HandleFunc("/books/delete", bh.Delete())
-
-	s.router.HandleFunc("/reports", s.reports())
-
-	rh := NewReportHandler(s.store)
-
-	s.router.HandleFunc("/reports/rarely", rh.Rarely())
-
-	s.router.HandleFunc("/reports/rate", rh.Rate())
-
-	s.router.HandleFunc("/reports/credit", rh.Credit())
 
 }
 

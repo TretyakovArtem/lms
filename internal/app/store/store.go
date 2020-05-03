@@ -3,16 +3,14 @@ package store
 import (
 	"database/sql"
 
-	_ "github.com/go-sql-driver/mysql"
+	_ "github.com/lib/pq"
 )
 
 // Store ..
 type Store struct {
-	config             *Config
-	db                 *sql.DB
-	customerRepository *CustomerRepository
-	bookRepository     *BookRepository
-	reportRepository   *ReportRepository
+	config         *Config
+	db             *sql.DB
+	bookRepository *BookRepository
 }
 
 // New ..
@@ -24,7 +22,7 @@ func New(config *Config) *Store {
 
 // Open ...
 func (s *Store) Open() error {
-	db, err := sql.Open("mysql", s.config.DatabaseURL)
+	db, err := sql.Open("postgres", s.config.DatabaseURL)
 	if err != nil {
 		return err
 	}
@@ -43,19 +41,6 @@ func (s *Store) Close() {
 	s.db.Close()
 }
 
-// Customer ...
-func (s *Store) Customer() *CustomerRepository {
-	if s.customerRepository != nil {
-		return s.customerRepository
-	}
-
-	s.customerRepository = &CustomerRepository{
-		store: s,
-	}
-
-	return s.customerRepository
-}
-
 // Book ...
 func (s *Store) Book() *BookRepository {
 	if s.bookRepository != nil {
@@ -67,17 +52,4 @@ func (s *Store) Book() *BookRepository {
 	}
 
 	return s.bookRepository
-}
-
-// Report ...
-func (s *Store) Report() *ReportRepository {
-	if s.reportRepository != nil {
-		return s.reportRepository
-	}
-
-	s.reportRepository = &ReportRepository{
-		store: s,
-	}
-
-	return s.reportRepository
 }

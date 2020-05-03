@@ -2,13 +2,7 @@ package model
 
 // Book ...
 type Book struct {
-	ID           int
-	Name         string
-	Author       string
-	Code         string
-	Year         string
-	Publisher    string
-	CountPapers  int
-	TotalBalance int
-	Rate         int
+	ID   uint64 `db:"id"`
+	Name string `db:"name"`
+	Year string `db:"year"`
 }
