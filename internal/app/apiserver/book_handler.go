@@ -3,7 +3,7 @@ package apiserver
 import (
 	"net/http"
 
-	"github.com/TretyakovArtem/lms/internal/app/store"
+	"github.com/p4thf1nderr/lms/internal/app/store"
 )
 
 // BookHandler ...

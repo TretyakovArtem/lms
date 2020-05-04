@@ -7,7 +7,7 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/TretyakovArtem/lms/internal/app/store/teststore"
+	"github.com/p4thf1nderr/lms/internal/app/store/teststore"
 	"github.com/stretchr/testify/assert"
 )
 

@@ -1,0 +1,4 @@
+bind_addr = ":8080"
+log_level = "debug"
+database_url = "host=localhost user=user password=password dbname=dbname sslmode=disable"
+database_url_mysql = "root:password@tcp(127.0.0.1)/dbname?charset=utf8" 

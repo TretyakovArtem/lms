@@ -4,7 +4,7 @@ import (
 	"database/sql"
 	"net/http"
 
-	"github.com/TretyakovArtem/lms/internal/app/store/sqlstore"
+	"github.com/p4thf1nderr/lms/internal/app/store/sqlstore"
 )
 
 // Start ...

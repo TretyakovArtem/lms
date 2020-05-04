@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/TretyakovArtem/lms/internal/app/model"
-	"github.com/TretyakovArtem/lms/internal/app/store"
+	"github.com/p4thf1nderr/lms/internal/app/model"
+	"github.com/p4thf1nderr/lms/internal/app/store"
 	"github.com/gorilla/mux"
 	"github.com/sirupsen/logrus"
 )

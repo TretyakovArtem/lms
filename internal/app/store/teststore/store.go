@@ -1,8 +1,8 @@
 package teststore
 
 import (
-	"github.com/TretyakovArtem/lms/internal/app/model"
-	"github.com/TretyakovArtem/lms/internal/app/store"
+	"github.com/p4thf1nderr/lms/internal/app/model"
+	"github.com/p4thf1nderr/lms/internal/app/store"
 )
 
 // Store ..

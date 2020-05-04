@@ -3,8 +3,8 @@ package teststore_test
 import (
 	"testing"
 
-	"github.com/TretyakovArtem/lms/internal/app/model"
-	"github.com/TretyakovArtem/lms/internal/app/store/teststore"
+	"github.com/p4thf1nderr/lms/internal/app/model"
+	"github.com/p4thf1nderr/lms/internal/app/store/teststore"
 	"github.com/stretchr/testify/assert"
 )
 

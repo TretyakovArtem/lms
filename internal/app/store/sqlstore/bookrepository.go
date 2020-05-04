@@ -1,7 +1,7 @@
 package sqlstore
 
 import (
-	"github.com/TretyakovArtem/lms/internal/app/model"
+	"github.com/p4thf1nderr/lms/internal/app/model"
 )
 
 // BookRepository ...

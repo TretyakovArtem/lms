@@ -1,4 +1,4 @@
-module github.com/TretyakovArtem/lms
+module github.com/p4thf1nderr/lms
 
 go 1.13
 

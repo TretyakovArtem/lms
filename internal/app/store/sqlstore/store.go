@@ -3,7 +3,7 @@ package sqlstore
 import (
 	"database/sql"
 
-	"github.com/TretyakovArtem/lms/internal/app/store"
+	"github.com/p4thf1nderr/lms/internal/app/store"
 	_ "github.com/lib/pq"
 )
 

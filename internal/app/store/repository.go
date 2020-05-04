@@ -1,6 +1,6 @@
 package store
 
-import "github.com/TretyakovArtem/lms/internal/app/model"
+import "github.com/p4thf1nderr/lms/internal/app/model"
 
 // BookRepository ...
 type BookRepository interface {
